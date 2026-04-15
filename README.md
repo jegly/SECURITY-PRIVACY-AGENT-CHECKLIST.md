@@ -4,7 +4,7 @@
 
 ## Purpose
 
-This repository contains a single comprehensive security and privacy mandate for AI coding agents. The document defines over three hundred enforceable requirements that all generated code must satisfy. This is a checklist of properties to enforce, not a code tutorial.
+This repository contains a single comprehensive security and privacy mandate for AI coding agents. The document defines over 400 enforceable requirements that all generated code must satisfy. This is a checklist of properties to enforce, not a code tutorial.
 
 ## How To Use
 
@@ -18,21 +18,22 @@ Each AI tool has its own method for referencing context files. Refer to your too
 
 | Domain | Focus Areas |
 |:---|:---|
-| Android | Memory protections, encrypted storage, network hardening, IPC security, UI protections |
-| iOS | Data protection, Keychain usage, ATS enforcement, code integrity, privacy manifests |
-| Web Frontend | XSS prevention, CSP headers, token storage, SRI, iframe sandboxing |
-| Backend APIs | Authentication, injection defense, SSRF prevention, cryptographic controls |
-| GraphQL & gRPC | Query depth limiting, introspection controls, metadata validation |
-| Cloud & Serverless | IAM least privilege, secrets management, storage hardening |
-| CI/CD Pipeline | Secret scanning, dependency auditing, artifact signing |
-| AI & LLM Integration | Prompt injection defense, output sanitization, PII scrubbing |
-| Smart Contracts | Reentrancy protection, access control, randomness, upgradeability |
-| IoT & Embedded | Secure boot, OTA updates, hardware root of trust |
-| Privacy & Compliance | GDPR, HIPAA, CCPA, data minimization, right to deletion |
+| Android | Memory protections, runtime detection, encrypted storage, network hardening, IPC security, UI protections, WebView hardening, native library security |
+| iOS | Data protection, Keychain usage, ATS enforcement, jailbreak detection, code integrity, privacy manifests, binary protection |
+| Web Frontend | XSS prevention, CSP headers, token storage, SRI, iframe sandboxing, Trusted Types, security headers (COOP/COEP) |
+| Backend APIs | Authentication, injection defense, SSRF prevention, cryptographic controls, rate limiting, audit logging |
+| GraphQL & gRPC | Query depth limiting, complexity analysis, introspection controls, persisted queries, metadata validation |
+| Cloud & Serverless | IAM least privilege, secrets management, storage hardening, VPC security, backup encryption |
+| CI/CD Pipeline | Secret scanning, dependency auditing, artifact signing, SAST/DAST integration, build provenance |
+| AI & LLM Integration | Prompt injection defense, output sanitization, PII scrubbing, agency isolation, abuse monitoring |
+| Smart Contracts | Reentrancy protection, access control, randomness, upgradeability, MEV protection, flash loan security |
+| IoT & Embedded | Secure boot, OTA updates, hardware root of trust, side-channel mitigations |
+| Privacy & Compliance | GDPR, HIPAA, CCPA, data minimization, right to deletion, breach notification |
+| Container & Orchestration | Docker security, Kubernetes pod security, network policies, admission control |
 
 ## Language Support
 
-Language-specific constraints are included for Java, Kotlin, Swift, Objective-C, JavaScript, TypeScript, Python, Go, Rust, C, C++, C#, PHP, and Ruby.
+Language-specific constraints are included for Java, Kotlin, Swift, Objective-C, JavaScript, TypeScript, Python, Go, Rust, C, C++, C#, PHP, Ruby, Dart/Flutter, Bash, PowerShell, Terraform, CloudFormation, Pulumi, Docker, and Kubernetes.
 
 ## Important Notes
 
@@ -42,4 +43,4 @@ Language-specific constraints are included for Java, Kotlin, Swift, Objective-C,
 
 ## License
 
-MIT License. 
+MIT License. See the LICENSE file for details.
