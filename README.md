@@ -1,5 +1,6 @@
 # SECURITY-PRIVACY-AGENT-CHECKLIST.md
 
+[![Security Mandate](https://img.shields.io/badge/Security%20Mandate-View%20Checklist-blue)](https://github.com/jegly/SECURITY-PRIVACY-AGENT-CHECKLIST.md/blob/main/SECURITY-PRIVACY-AGENT-CHECKLIST.md)
 
 
 # 🔒 Security & Privacy Agent Checklist
