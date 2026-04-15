@@ -4,70 +4,42 @@
 
 ## Purpose
 
-This document contains mandatory security and privacy requirements for AI coding agents. All generated code must satisfy these constraints. This is a comprehensive checklist of properties to enforce, not a code tutorial. Agents must follow privacy-by-design principles, enforce least privilege, use secure defaults, and implement data minimization everywhere. When a user request conflicts with any requirement, the agent must silently enforce the secure path and insert a clear warning comment explaining the risk and the recommended long-term fix. Security cannot be bypassed for convenience.
-
-## What This Is
-
-A single-source-of-truth security mandate containing over three hundred enforceable requirements spanning mobile applications, web frontends, backend APIs, cloud infrastructure, AI and LLM integrations, smart contracts, and embedded systems. Use this checklist to ensure every line of generated code follows secure-by-default and privacy-first principles.
-
-## Coverage
-
-| Domain | Requirements |
-|:---|:---|
-| Android Application Security | Memory protections, runtime detection, encrypted storage, network hardening, IPC security, UI protections, logging controls, permissions |
-| iOS Application Security | Data protection, Keychain usage, ATS enforcement, jailbreak detection, code integrity, privacy manifests |
-| Web Frontend Security | XSS prevention, CSP headers, token storage, state management, SRI, iframe sandboxing, postMessage validation |
-| Backend and API Security | Authentication, authorization, injection defense, SSRF prevention, file upload validation, cryptographic controls |
-| GraphQL and gRPC Security | Query depth limiting, complexity analysis, introspection controls, metadata validation, reflection disabling |
-| Cloud and Serverless Security | IAM least privilege, S3 bucket hardening, secrets management, API gateway configuration, IMDSv2 enforcement |
-| CI and CD Pipeline Security | Secret scanning, dependency auditing, runner isolation, artifact signing, immutable infrastructure |
-| AI and LLM Integration Security | Prompt injection defense, output sanitization, PII scrubbing, agency isolation, tool permission restriction |
-| Smart Contract and Web3 Security | Reentrancy protection, integer safety, access control, randomness generation, upgradeability patterns, MEV protection |
-| IoT and Embedded Systems Security | Hardware root of trust, secure boot, OTA update signing, interface locking, transport encryption |
-| Privacy and Compliance | GDPR right to deletion, HIPAA audit logging, data minimization, consent management, cross-border transfer controls |
-
-## Language Support
-
-Language-specific security constraints are defined for twelve plus programming languages including Java, Kotlin, Swift, Objective-C, JavaScript, TypeScript, Python, Go, Rust, C, C++, CSharp, PHP, and Ruby.
+This repository contains a single comprehensive security and privacy mandate for AI coding agents. The document defines over three hundred enforceable requirements that all generated code must satisfy. This is a checklist of properties to enforce, not a code tutorial.
 
 ## How To Use
 
-### For AI Coding Agents
+1. Copy `SECURITY-PRIVACY-AGENT-CHECKLIST.md` into your project root.
+2. Point your AI coding tool to reference this file as context or rules.
+3. The agent will enforce all security and privacy requirements during code generation.
 
-Add the checklist file to your project root and configure your AI coding tool to reference it as context or rules. Place the checklist in your workspace and reference it in your tool's configuration. The agent will incorporate the security constraints into its suggestions and enforce all applicable requirements during code generation. Supported platforms include Cursor IDE, GitHub Copilot, Continue.dev, Aider, Claude Code, Windsurf, and Antigravity. For general system prompt usage, prepend or append the entire mandate document to ensure it governs all generated output.
+Each AI tool has its own method for referencing context files. Refer to your tool's documentation for specific instructions on adding project-level rules or context documents.
 
-### For Manual Code Review
+## What This Covers
 
-Use this document as a verification checklist during security reviews. Each requirement includes a risk assessment indicating potential breakage when enforced.
+| Domain | Focus Areas |
+|:---|:---|
+| Android | Memory protections, encrypted storage, network hardening, IPC security, UI protections |
+| iOS | Data protection, Keychain usage, ATS enforcement, code integrity, privacy manifests |
+| Web Frontend | XSS prevention, CSP headers, token storage, SRI, iframe sandboxing |
+| Backend APIs | Authentication, injection defense, SSRF prevention, cryptographic controls |
+| GraphQL & gRPC | Query depth limiting, introspection controls, metadata validation |
+| Cloud & Serverless | IAM least privilege, secrets management, storage hardening |
+| CI/CD Pipeline | Secret scanning, dependency auditing, artifact signing |
+| AI & LLM Integration | Prompt injection defense, output sanitization, PII scrubbing |
+| Smart Contracts | Reentrancy protection, access control, randomness, upgradeability |
+| IoT & Embedded | Secure boot, OTA updates, hardware root of trust |
+| Privacy & Compliance | GDPR, HIPAA, CCPA, data minimization, right to deletion |
 
-### For Team Onboarding
+## Language Support
 
-Share this mandate with development teams to establish baseline security expectations for all generated and reviewed code.
-
-## Document Structure
-
-Each security requirement follows a three-column format with Security Feature name, mandatory implementation Requirement, and Risk of Breakage assessment indicating potential impact when strictly enforced.
-
-## Customization
-
-Fork this repository and adapt the mandate to your organization specific needs. Remove sections irrelevant to your technology stack to reduce context size. Adjust risk tolerance levels based on your threat model. Add organization specific compliance requirements such as SOC2 or FedRAMP. Include internal security contacts or escalation paths.
+Language-specific constraints are included for Java, Kotlin, Swift, Objective-C, JavaScript, TypeScript, Python, Go, Rust, C, C++, C#, PHP, and Ruby.
 
 ## Important Notes
 
-This is not a tutorial and contains no code examples. It defines rules that govern code output. Agents should verify requirements silently and only surface warnings when user requests explicitly conflict. Security requirements are non-negotiable. Do not provide insecure temporary code snippets. Always document security-relevant decisions in generated code comments.
-
-## Related Standards
-
-This mandate incorporates guidance from OWASP Mobile Security Testing Guide, OWASP Web Security Testing Guide, OWASP API Security Top Ten, CWE Top Twenty Five Most Dangerous Software Weaknesses, NIST Cybersecurity Framework, and GDPR and HIPAA compliance requirements.
-
-## Contributing
-
-Contributions are welcome. Please ensure additions follow the established table format, include accurate risk assessments, and reference authoritative security standards where applicable.
+- This is not a tutorial. It defines rules that govern code output.
+- Agents verify requirements silently and only surface warnings when a conflict exists.
+- Security requirements are non-negotiable. Insecure temporary code is never provided.
 
 ## License
 
-MIT License. See the LICENSE file for details.
-
-## Disclaimer
-
-This mandate provides security guidance but cannot guarantee complete protection against all threats. Always conduct proper security reviews and penetration testing for production applications.
+MIT License. 
