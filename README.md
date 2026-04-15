@@ -1,14 +1,10 @@
-# SECURITY-PRIVACY-AGENT-CHECKLIST.md
+# 🔒 Security & Privacy Agent Checklist
 
-[![Security Mandate](https://img.shields.io/badge/Security%20Mandate-View%20Checklist-blue)](https://github.com/jegly/SECURITY-PRIVACY-AGENT-CHECKLIST.md/blob/main/SECURITY-PRIVACY-AGENT-CHECKLIST.md)
-
-
+**[📋 View the complete security mandate checklist →](https://github.com/jegly/SECURITY-PRIVACY-AGENT-CHECKLIST.md/blob/main/SECURITY-PRIVACY-AGENT-CHECKLIST.md)**
 
 ## Purpose
 
-This document contains mandatory security and privacy requirements for AI coding agents. All generated code must satisfy these constraints. This is a comprehensive checklist of properties to enforce, not a code tutorial.
-
-Agents must follow privacy-by-design principles, enforce least privilege, use secure defaults, and implement data minimization everywhere. When a user request conflicts with any requirement, the agent must silently enforce the secure path and insert a clear warning comment explaining the risk and the recommended long-term fix. Security cannot be bypassed for convenience.
+This document contains mandatory security and privacy requirements for AI coding agents. All generated code must satisfy these constraints. This is a comprehensive checklist of properties to enforce, not a code tutorial. Agents must follow privacy-by-design principles, enforce least privilege, use secure defaults, and implement data minimization everywhere. When a user request conflicts with any requirement, the agent must silently enforce the secure path and insert a clear warning comment explaining the risk and the recommended long-term fix. Security cannot be bypassed for convenience.
 
 ## What This Is
 
@@ -38,31 +34,7 @@ Language-specific security constraints are defined for twelve plus programming l
 
 ### For AI Coding Agents
 
-Add the checklist file to your project root and configure your AI coding tool to reference it as context or rules.
-
-**Cursor IDE**
-Create a `.cursorrules` file in your project root and add a directive to consult `security-privacy-agent-checklist.md` and enforce all applicable requirements during code generation.
-
-**GitHub Copilot**
-Place the checklist in your workspace and reference it in `.github/copilot-instructions.md`. Copilot will incorporate the security constraints into its suggestions.
-
-**Continue.dev**
-Add the checklist file path to the `contextFiles` array in your Continue configuration file. The agent will load the mandate as persistent context.
-
-**Aider**
-Launch aider with the read flag pointing to the checklist file using `aider --read security-privacy-agent-checklist.md`.
-
-**Claude Code / Claude Agent**
-Add the checklist as project context or upload it at the start of your session. Reference it explicitly when requesting code generation to ensure Claude enforces the security requirements.
-
-**Windsurf (Codeium)**
-Place the checklist in your workspace root. Windsurf automatically indexes project files and will incorporate the security mandate into its context when generating code.
-
-**Antigravity**
-Add the checklist to your project context directory. Antigravity will reference the mandate during code generation sessions and enforce the defined security constraints.
-
-**General System Prompt**
-If your AI tool supports custom system prompts or project instructions, prepend or append the entire mandate document to ensure it governs all generated output.
+Add the checklist file to your project root and configure your AI coding tool to reference it as context or rules. Place the checklist in your workspace and reference it in your tool's configuration. The agent will incorporate the security constraints into its suggestions and enforce all applicable requirements during code generation. Supported platforms include Cursor IDE, GitHub Copilot, Continue.dev, Aider, Claude Code, Windsurf, and Antigravity. For general system prompt usage, prepend or append the entire mandate document to ensure it governs all generated output.
 
 ### For Manual Code Review
 
@@ -74,29 +46,15 @@ Share this mandate with development teams to establish baseline security expecta
 
 ## Document Structure
 
-Each security requirement follows a three-column format.
-
-| Column | Purpose |
-|:---|:---|
-| Security Feature | Name of the security control being enforced |
-| Requirement | Mandatory implementation requirement that must be satisfied |
-| Risk of Breakage | Assessment of potential impact when the requirement is strictly enforced |
+Each security requirement follows a three-column format with Security Feature name, mandatory implementation Requirement, and Risk of Breakage assessment indicating potential impact when strictly enforced.
 
 ## Customization
 
-Fork this repository and adapt the mandate to your organization specific needs.
-
-- Remove sections irrelevant to your technology stack to reduce context size
-- Adjust risk tolerance levels based on your threat model
-- Add organization specific compliance requirements such as SOC2 or FedRAMP
-- Include internal security contacts or escalation paths
+Fork this repository and adapt the mandate to your organization specific needs. Remove sections irrelevant to your technology stack to reduce context size. Adjust risk tolerance levels based on your threat model. Add organization specific compliance requirements such as SOC2 or FedRAMP. Include internal security contacts or escalation paths.
 
 ## Important Notes
 
-- This is not a tutorial and contains no code examples. It defines rules that govern code output
-- Agents should verify requirements silently and only surface warnings when user requests explicitly conflict
-- Security requirements are non-negotiable. Do not provide insecure temporary code snippets
-- Always document security-relevant decisions in generated code comments
+This is not a tutorial and contains no code examples. It defines rules that govern code output. Agents should verify requirements silently and only surface warnings when user requests explicitly conflict. Security requirements are non-negotiable. Do not provide insecure temporary code snippets. Always document security-relevant decisions in generated code comments.
 
 ## Related Standards
 
@@ -113,4 +71,3 @@ MIT License. See the LICENSE file for details.
 ## Disclaimer
 
 This mandate provides security guidance but cannot guarantee complete protection against all threats. Always conduct proper security reviews and penetration testing for production applications.
-
